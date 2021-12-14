@@ -39,9 +39,14 @@ if [[ "$str" == "" ]]; then
 fi
 
 group=${str##*:}
-echo $group
+#echo $group
 
-echo `cut -d ',' -f 1 $group`
 
-users=()
+IFS=';,' read -ra users <<< "$group"
 
+for user in "${users[@]}"
+do
+    echo $user
+
+done
+exit 0
