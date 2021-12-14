@@ -42,7 +42,7 @@ group=${str##*:}
 #echo $group
 
 
-IFS=';,' read -ra users <<< "$group"
+IFS=',' read -ra users <<< "$group"
 
 for user in "${users[@]}"
 do
